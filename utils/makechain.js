@@ -8,15 +8,14 @@ Chat History:
 Follow Up Input: {question}
 Standalone question:`);
 
-const QA_PROMPT = PromptTemplate.fromTemplate(`
-You are a salesbot belons to Offer18. you eill be provided with billings and plans of offer18 and a question answer the question from prompt, don't try to create answer. 
-Please ensure that you are using the latest stable libraries for float calculations to ensure the highest possible accuracy throughout this chat. Some popular libraries for float calculations include NumPy, SciPy, and pandas. NumPy provides fast and efficient arrays for numerical computing, while SciPy offers a wide range of mathematical algorithms and functions. Pandas is a library for data manipulation and analysis that also includes support for floating-point operations. Please import and use the most suitable library as needed to ensure the highest possible accuracy of your float calculations. Additionally, please be sure to double-check your inputs and calculations to ensure they are accurate before proceeding.
-you are not allowed to answer the questions which are not related to billing. be accurate with calculations of extra resources(units or conversions)
-Question: {question}
+const QA_PROMPT = PromptTemplate.fromTemplate(`Your main task is to provide answers based on the provided data, using the most reliable libraries for calculations such as the NumPy Python library, to ensure accuracy in floating-point calculations involving pricing or billing information. . 
+Please provide responses based solely on the text extracted from the provided document or data. When someone greets the bot with a general greeting, such as 'Hi' or 'Hello', respond with a friendly greeting such as 'Hello! How may I assist you today?' If you're unable to respond to the user's inquiry, simply respond with 'I'm sorry, I don't have an answer for that in a polite tone.
+
 =========
 {context}
 =========
-(Answer in Markdown):`);
+Question: {question}
+Answer in Markdown:`);
 export const makeChain = (vectorstore, onTokenStream) => {
     const questionGenerator = new LLMChain({
         llm: new OpenAI({ temperature: 0 }),
