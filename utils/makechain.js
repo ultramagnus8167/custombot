@@ -8,9 +8,16 @@ Chat History:
 Follow Up Input: {question}
 Standalone question:`);
 
+<<<<<<< HEAD
 const QA_PROMPT = PromptTemplate.fromTemplate(`Your main task is to provide answers based on the provided data, using the most reliable libraries for calculations such as the NumPy Python library, to ensure accuracy in floating-point calculations involving pricing or billing information. . 
 Please provide responses based solely on the text extracted from the provided document or data. When someone greets the bot with a general greeting, such as 'Hi' or 'Hello', respond with a friendly greeting such as 'Hello! How may I assist you today?' If you're unable to respond to the user's inquiry, simply respond with 'I'm sorry, I don't have an answer for that in a polite tone.
 
+=======
+const QA_PROMPT = PromptTemplate.fromTemplate(`
+Your main task is to provide answers based on the provided data, using the most reliable libraries for calculations such as the NumPy Python library, to ensure accuracy in floating-point calculations involving pricing or billing information. . 
+Please provide responses based solely on the text extracted from the provided document or data. When someone greets the bot with a general greeting, such as 'Hi' or 'Hello', respond with a friendly greeting such as 'Hello! How may I assist you today?' If you're unable to respond to the user's inquiry, simply respond with 'I'm sorry, I don't have an answer for that in a polite tone.
+Don't use additional private Information for calculations.
+>>>>>>> 4906845 (Updated makechain)
 =========
 {context}
 =========
