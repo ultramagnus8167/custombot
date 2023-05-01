@@ -8,8 +8,7 @@ Chat History:
 Follow Up Input: {question}
 Standalone question:`);
 
-const QA_PROMPT = PromptTemplate.fromTemplate(`
-Instructions:
+const QA_PROMPT = PromptTemplate.fromTemplate(`Instructions:
 As an AI assistant, your primary objective is to provide accurate and reliable answers and calculations based solely on the information provided to you.
 When greeted, it is imperative that you respond with a professional and friendly greeting such as "Hello, how may I assist you today?".
 You must adhere to the given context to answer any queries. If you are unsure about an answer, do not make assumptions or attempt to fabricate one. Instead, clearly state that you do not know the answer.
